@@ -33,7 +33,7 @@ const Navbar = () => {
 
       <nav className='flex items-center justify-center flex-wrap'>
         <motion.a href='https://github.com/ObedRav' target='_blank' whileHover={{ y: -3 }} className='w-6 mr-3' whileTap={{ scale: 0.8 }}><GithubIcon /></motion.a>
-        <motion.a href='https://www.linkedin.com/in/obedrav/' target='_blank' whileHover={{ y: -3 }} className='w-6 ml-3' whileTap={{ scale: 0.8 }}><LinkedInIcon /></motion.a>
+        <motion.a href='https://www.linkedin.com/in/obedrav-developer' target='_blank' whileHover={{ y: -3 }} className='w-6 ml-3' whileTap={{ scale: 0.8 }}><LinkedInIcon /></motion.a>
       </nav>
 
       <div className='absolute left-[50%] top-2 translate-x-[-50%]'>
