@@ -3,8 +3,34 @@ import AnimatedText from '@/components/AnimatedText'
 import Layout from '@/components/Layout'
 import Head from 'next/head'
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import profilePicture from '../../public/images/profile_picture.png'
+import { useInView, useMotionValue, useSpring } from 'framer-motion'
+
+const AnimatedNumbers = ({value}) => {
+    const ref = useRef(null);
+
+    const motionValue = useMotionValue(0);
+    const springValue = useSpring(motionValue, { duration: 3000 });
+    const isInView = useInView(ref, { once: true });
+
+    useEffect(() => {
+        if (isInView) {
+            motionValue.set(value)
+        }
+    }, [isInView, value, motionValue]);
+
+    useEffect(() => {
+        springValue.on('change', (latest) => {
+            if (ref.current && latest.toFixed(0) <= value) {
+                ref.current.textContent = latest.toFixed(0);
+            }
+        })
+    }, [springValue, value])
+
+    return <span ref={ref}></span>
+}
+
 
 const about = () => {
   return (
@@ -46,6 +72,32 @@ const about = () => {
                     <div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8'>
                         <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark' />
                         <Image src={profilePicture} alt='profile picture' className='w-full h-auto rounded-2xl' />
+                    </div>
+
+                    {/** Graph */}
+                    <div className='col-span-2 flex flex-col items-end justify-between'>
+
+                        <div className='flex flex-col items-end justify-center'>
+                            <span className='inline-block text-7xl font-bold'>
+                                <AnimatedNumbers value={3000} />+
+                            </span>
+                            <h2 className='text-xl font-medium capitalize text-dark/75'>Development Hours</h2>
+                        </div>
+
+                        <div className='flex flex-col items-end justify-center'>
+                            <span className='inline-block text-7xl font-bold'>
+                                <AnimatedNumbers value={70} />+
+                            </span>
+                            <h2 className='text-xl font-medium capitalize text-dark/75'>Projects Completed</h2>
+                        </div>
+
+                        <div className='flex flex-col items-end justify-center'>
+                            <span className='inline-block text-7xl font-bold'>
+                                <AnimatedNumbers value={1} />+
+                            </span>
+                            <h2 className='text-xl font-medium capitalize text-dark/75'>Years of Experience</h2>
+                        </div>
+
                     </div>
                 </div>
             </Layout>

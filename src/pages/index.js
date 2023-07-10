@@ -29,7 +29,7 @@ export default function Home () {
               </p>
               <div className='flex items-center self-start mt-2'>
                 <Link
-                  href='/resume.pdf'
+                  href='https://drive.google.com/drive/folders/1hYrW3IAV-0B7t0ZI14OGOq6L9dGy219q?usp=sharing'
                   target='_blank'
                   className='bg-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark border-2 border-solid border-transparent hover:border-dark'
                 >
