@@ -13,7 +13,7 @@ const about = () => {
     <>
         <Head>
             <title>ObedRav | About</title>
-            <meta name='description' content='about devloper page' />
+            <meta name='description' content='about developer page' />
         </Head>
         <main className='flex w-full flex-col items-center justify-center'>
             <Layout className='pt-16'>
