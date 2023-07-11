@@ -28,6 +28,15 @@ const singleWord = {
   }
 };
 
+/**
+ * The `AnimatedText` component is a JavaScript function that takes in a `text` and `className` prop
+ * and returns a div containing a motion-based animated heading element. The heading element splits the
+ * `text` prop into individual words and animates them using the `quote` and `singleWord` variants.
+ * @returns The `AnimatedText` component is returning a div element with a class name of 'w-full
+ * mx-auto py-2 flex items-center justify-center text-center overflow-hidden'. Inside the div, there is
+ * a motion.h1 element with a class name of 'inline-block w-full text-dark font-bold capitalize' and a
+ * variants prop set to the `quote` variable. The motion.h1 element also has
+ */
 const AnimatedText = ({ text, className = '' }) => {
   return (
     <div className='w-full mx-auto py-2 flex items-center justify-center text-center overflow-hidden'>
