@@ -13,20 +13,27 @@ export default function Home () {
     <>
       <Head>
         <title>ObedRav</title>
-        <meta name='description' content='Portflio for ObedRav' />
+        <meta name='description' content='Portfolio for ObedRav' />
       </Head>
+  
       <main className='flex items-center text-dark w-full min-h-screen'>
         <Layout className='pt-0'>
           <div className='flex items-center justify-between w-full'>
+
+            { /** Picture */ }
             <div className='w-1/2 mr-10'>
-              <Image src={DevPicture} alt='DevImage' className='w-full h-auto' />
+              <Image src={ DevPicture } alt='DevImage' className='w-full h-auto' />
             </div>
+
+            { /** Texts */ }
             <div className='w-1/2 flex flex-col items-center self-center'>
               <AnimatedText text='Turning Dreams Into Reality With Code' className='text-6xl text-left' />
               <p className='my-4 text-base font-medium'>
                 As a software engineer developer, I am dedicated to turning ideas into innovative solutions through code.
                 Explore my latest projects, where I showcase my expertise in various technologies and web development.
               </p>
+
+              { /** Buttoms */ }
               <div className='flex items-center self-start mt-2'>
                 <Link
                   href='https://drive.google.com/drive/folders/1hYrW3IAV-0B7t0ZI14OGOq6L9dGy219q?usp=sharing'
@@ -44,14 +51,17 @@ export default function Home () {
                   Contact Me
                 </Link>
               </div>
+
             </div>
           </div>
         </Layout>
+
         <HireMe />
 
         <div className='absolute right-8 bottom-8 inline-block w-24'>
-          <Image src={lightBulb} alt='Light' className='w-full h-auto' />
+          <Image src={ lightBulb } alt='Light' className='w-full h-auto' />
         </div>
+
       </main>
     </>
   );
