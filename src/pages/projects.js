@@ -17,6 +17,7 @@ import JovianCarrers from '../../public/images/projects/JovianCarrers.png'
 import chatgptClone from '../../public/images/projects/chatgptClone.png'
 import LowLevel from '../../public/images/projects/LowLevel.svg'
 import HigherLevel from '../../public/images/projects/HigherLevel.png'
+import TransitionEffect from '@/components/TransitionEffect'
 
 const PrincipalProject = ({type, title, summary, image, link="", github=""}) => {
     const [ref, inView] = useInView();
@@ -33,27 +34,27 @@ const PrincipalProject = ({type, title, summary, image, link="", github=""}) => 
     return (
         <motion.article
         ref={ ref }
-        className='w-full flex items-center justify-between relative rounded-br-2xl rounded-3xl border border-solid border-dark bg-light shadow-2xl p-12'
+        className='w-full flex items-center justify-between relative rounded-br-2xl rounded-3xl border border-solid border-dark bg-light shadow-2xl p-12 dark:bg-dark dark:border-light '
         initial={{ opacity: 0, y: 100 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
         transition={{ duration: 0.5 }}
         onAnimationComplete={ handleAnimationComplete }
         onAnimationStart={ handleAnimationStart }
         >
-            { showDiv && (<div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103.5%] rounded-[2.5rem] bg-dark rounded-br-3xl' />) }
+            { showDiv && (<div className='absolute top-0 -right-3 -z-10 w-[100.5%] h-[103.5%] rounded-[2.5rem] bg-dark rounded-br-3xl dark:bg-light' />) }
             <Link href={ link } target='_blank' className='flex justify-center items-center w-1/2 cursor-pointer overflow-hidden rounded-lg'>
                 <Image src={ image } alt={ title } className='w-auto h-48' />
             </Link>
 
             <div className='w-1/2 flex flex-col items-start justify-between pl-6'>
-                <span className='text-primary font-medium text-xl'>{ type }</span>
+                <span className='text-primary font-medium text-xl dark:text-primaryDark'>{ type }</span>
                 <Link href={ link } target='_blank' className='hover:underline underline-offset-2'>
-                    <h2 className='my-2 w.full text-left text-4xl font-bold'>{ title }</h2>
+                    <h2 className='my-2 w.full text-left text-4xl font-bold dark:text-light'>{ title }</h2>
                 </Link>
-                <p className='my-2 font-medium text-dark'>{ summary }</p>
+                <p className='my-2 font-medium text-dark dark:text-light'>{ summary }</p>
                 <div className='mt-2 flex items-center'>
                     <Link href={ github } className='w-10'> <GithubIcon /> </Link>
-                    <Link href={ link } target='_blank' className='ml-4 rounded-lg bg-dark text-light p-2 px-6 text-lg font-semibold'>Visit Project</Link>
+                    <Link href={ link } target='_blank' className='ml-4 rounded-lg bg-dark text-light p-2 px-6 text-lg font-semibold dark:bg-light dark:text-dark'>Visit Project</Link>
                 </div>
             </div>
         </motion.article>
@@ -75,20 +76,20 @@ const Project = ({type, title, image, link="", github=""}) => {
     return (
         <motion.article
         ref={ref}
-        className='w.full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark bg-light p-6 relative'
+        className='w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark bg-light p-6 relative dark:bg-dark dark:border-light'
         initial={{ opacity: 0, y: 50 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.5 }}
         onAnimationComplete={ handleAnimationComplete }
         onAnimationStart={ handleAnimationStart }
         >
-            { showDiv && ( <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103.5%] rounded-[2rem] bg-dark rounded-br-3xl' />)}
+            { showDiv && ( <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103.5%] rounded-[2rem] bg-dark rounded-br-3xl dark:bg-light' />)}
             <Link href={ link } target='_blank' className='flex justify-center items-center w-full cursor-pointer overflow-hidden rounded-lg'>
                 <Image src={ image } alt={ title } className='w-auto h-48' />
             </Link>
 
             <div className='w-full flex flex-col items-start justify-between mt-4'>
-                <span className='text-primary font-medium text-xl'>{ type }</span>
+                <span className='text-primary font-medium text-xl dark:text-primaryDark'>{ type }</span>
                 <Link href={ link } target='_blank' className='hover:underline underline-offset-2'>
                     <h2 className='my-2 w.full text-left text-3xl font-bold'>{ title }</h2>
                 </Link>
@@ -109,7 +110,9 @@ const projects = () => {
             <meta name='description' content='projects developer page' />
         </Head>
 
-        <main className='w-full mb-16 flex flex-col items-center justify-center'>
+        <TransitionEffect />
+
+        <main className='w-full mb-16 flex flex-col items-center justify-center dark:text-light'>
             <Layout className='pt-16'>
                 <AnimatedText text='Unleashing the Creative Spark!' className='text-8xl mb-16' />
                 <div className='grid grid-cols-12 gap-24 gap-y-32'>
