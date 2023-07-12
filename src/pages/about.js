@@ -15,14 +15,14 @@ const about = () => {
             <title>ObedRav | About</title>
             <meta name='description' content='about developer page' />
         </Head>
-        <main className='flex w-full flex-col items-center justify-center'>
+        <main className='flex w-full flex-col items-center justify-center dark:text-light'>
             <Layout className='pt-16'>
                 <AnimatedText text='Code Crafted with Heart and Mind!' className='text-7xl mb-16' />
                 <div className='grid w-full grid-cols-8 gap-16'>
 
                     { /** About me and text */ }
                     <div className='col-span-3 flex flex-col items-start justify-start'>
-                        <h2 className='mb-4 text-lg font-bold uppercase text-dark/75'>About me</h2>
+                        <h2 className='mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75'>About me</h2>
 
                         <p  className='font-medium'>
                             Hi, I'm <b>Obed Rayo</b>, a passionate software developer with expertise in full-stack
@@ -45,8 +45,8 @@ const about = () => {
                     </div>
 
                     { /** PROFILE PICTURE */ }
-                    <div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8'>
-                        <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark' />
+                    <div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8 dark:bg-dark dark:border-light'>
+                        <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light' />
                         <Image src={profilePicture} alt='profile picture' className='w-full h-auto rounded-2xl' />
                     </div>
 
@@ -57,21 +57,21 @@ const about = () => {
                             <span className='inline-block text-7xl font-bold'>
                                 <AnimatedNumbers value={3000} />+
                             </span>
-                            <h2 className='text-xl font-medium capitalize text-dark/75'>Development Hours</h2>
+                            <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75'>Development Hours</h2>
                         </div>
 
                         <div className='flex flex-col items-end justify-center'>
                             <span className='inline-block text-7xl font-bold'>
                                 <AnimatedNumbers value={70} />+
                             </span>
-                            <h2 className='text-xl font-medium capitalize text-dark/75'>Projects Completed</h2>
+                            <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75'>Projects Completed</h2>
                         </div>
 
                         <div className='flex flex-col items-end justify-center'>
                             <span className='inline-block text-7xl font-bold'>
                                 <AnimatedNumbers value={1} />+
                             </span>
-                            <h2 className='text-xl font-medium capitalize text-dark/75'>Years of Experience</h2>
+                            <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75'>Years of Experience</h2>
                         </div>
 
                     </div>

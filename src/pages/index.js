@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import Layout from '@/components/Layout';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -17,7 +18,7 @@ export default function Home() {
         <meta name='description' content='Portfolio for ObedRav' />
       </Head>
 
-      <main className='flex items-center text-dark w-full min-h-screen'>
+      <main className='flex items-center text-dark w-full min-h-screen dark:text-light'>
         <Layout className='pt-0'>
           <div className='flex items-center justify-between w-full'>
             {/** Picture */}
@@ -64,7 +65,7 @@ export default function Home() {
                     <Link
                       href='https://drive.google.com/drive/folders/1hYrW3IAV-0B7t0ZI14OGOq6L9dGy219q?usp=sharing'
                       target='_blank'
-                      className='bg-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark border-2 border-solid border-transparent hover:border-dark'
+                      className='bg-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark border-2 border-solid border-transparent hover:border-dark dark:bg-light dark:text-dark hover:dark:text-light hover:dark:bg-dark hover:dark:border-light'
                     >
                       Resume <LinkArrow className='w-6 ml-1' />
                     </Link>
@@ -77,7 +78,7 @@ export default function Home() {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.5 }}
                     exit={{ y: 100, opacity: 0 }}
-                    className='ml-4 text-lg font-medium text-dark underline'
+                    className='ml-4 text-lg font-medium text-dark underline dark:text-light'
                   >
                     <Link href='mailto:rayovianamiltonobed@gmail.com' rel='noreferrer' target='_blank'>
                       Contact Me
@@ -104,7 +105,7 @@ export default function Home() {
             whileTap={{ scale: 0.9 }}
             className='relative'
           >
-            <Image src={lightBulb} alt='Light' className='w-full h-auto' />
+            <Image src={ lightBulb } alt='Light' className='w-full h-auto' />
           </motion.div>
         </motion.div>
 
