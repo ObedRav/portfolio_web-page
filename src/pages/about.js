@@ -7,6 +7,7 @@ import React from 'react'
 import profilePicture from '../../public/images/profile_picture.png'
 import AnimatedNumbers from '@/components/AnimatedNumbers'
 import Skills from '@/components/Skills'
+import TransitionEffect from '@/components/TransitionEffect'
 
 const about = () => {
   return (
@@ -15,6 +16,9 @@ const about = () => {
             <title>ObedRav | About</title>
             <meta name='description' content='about developer page' />
         </Head>
+
+        <TransitionEffect />
+
         <main className='flex w-full flex-col items-center justify-center dark:text-light'>
             <Layout className='pt-16'>
                 <AnimatedText text='Code Crafted with Heart and Mind!' className='text-7xl mb-16' />

@@ -17,6 +17,7 @@ import JovianCarrers from '../../public/images/projects/JovianCarrers.png'
 import chatgptClone from '../../public/images/projects/chatgptClone.png'
 import LowLevel from '../../public/images/projects/LowLevel.svg'
 import HigherLevel from '../../public/images/projects/HigherLevel.png'
+import TransitionEffect from '@/components/TransitionEffect'
 
 const PrincipalProject = ({type, title, summary, image, link="", github=""}) => {
     const [ref, inView] = useInView();
@@ -108,6 +109,8 @@ const projects = () => {
             <title>ObedRav | Projects Page</title>
             <meta name='description' content='projects developer page' />
         </Head>
+
+        <TransitionEffect />
 
         <main className='w-full mb-16 flex flex-col items-center justify-center dark:text-light'>
             <Layout className='pt-16'>

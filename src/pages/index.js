@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { LinkArrow } from '@/components/icons';
 import HireMe from '@/components/HireMe';
 import lightBulb from '../../public/svgs/lightBulb.svg';
+import TransitionEffect from '@/components/TransitionEffect';
 
 export default function Home() {
   return (
@@ -17,6 +18,8 @@ export default function Home() {
         <title>ObedRav</title>
         <meta name='description' content='Portfolio for ObedRav' />
       </Head>
+
+    <TransitionEffect />
 
       <main className='flex items-center text-dark w-full min-h-screen dark:text-light'>
         <Layout className='pt-0'>
