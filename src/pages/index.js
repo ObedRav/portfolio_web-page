@@ -31,7 +31,7 @@ export default function Home() {
                 exit={{ y: 100, opacity: 0 }}
                 className='w-1/2 mr-10'
               >
-                <Image src={DevPicture} alt='DevImage' className='w-full h-auto' />
+                <Image src={DevPicture} alt='DevImage' className='w-full h-auto' priority sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw' />
               </motion.div>
             </AnimatePresence>
 
