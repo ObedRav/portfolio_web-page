@@ -27,8 +27,18 @@ module.exports = {
         'spin-slow': 'spin 5s linear infinite'
       },
       backgroundImage: {
+        // Normal Computer
         circularLight: 'repeating-radial-gradient(rgba(0, 0, 0, 0.4) 0.5px, #f5f5f5 5px, #f5f5f5 100px);',
-        circularDark: 'repeating-radial-gradient(rgba(255, 255, 255, 0.5) 0.5px, #1b1b1b 5px, #1b1b1b 100px);'
+        circularDark: 'repeating-radial-gradient(rgba(255, 255, 255, 0.5) 0.5px, #1b1b1b 5px, #1b1b1b 100px);',
+        // Max 1023px
+        circularLightLg: 'repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#f5f5f5 5px,#f5f5f5 80px)',
+        circularDarkLg: 'repeating-radial-gradient(rgba(255,255,255,0.5) 2px,#1b1b1b 8px,#1b1b1b 80px)',
+        // Max 767px
+        circularLightMd: 'repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#f5f5f5 5px,#f5f5f5 60px)',
+        circularDarkMd: 'repeating-radial-gradient(rgba(255,255,255,0.5) 2px,#1b1b1b 8px,#1b1b1b 60px)',
+        // Max 639px
+        circularLightSm: 'repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#f5f5f5 5px,#f5f5f5 40px)',
+        circularDarkSm: 'repeating-radial-gradient(rgba(255,255,255,0.5) 2px,#1b1b1b 8px,#1b1b1b 40px)'
       }
     },
     screens: {
