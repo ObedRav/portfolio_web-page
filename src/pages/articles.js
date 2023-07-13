@@ -17,12 +17,12 @@ const articles = () => {
       <TransitionEffect />
 
       <Layout>
-        <div className="flex flex-col items-center justify-center mb-20">
-          <AnimatedText text="Working on it..." className="text-8xl lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl" />
+        <div className='flex flex-col items-center justify-center mb-20'>
+          <AnimatedText text='Working on it...' className='text-8xl lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl' />
         </div>
 
-        <div className="flex justify-center">
-          <Image src={WorkSVG} alt="Working" />
+        <div className='flex justify-center'>
+          <Image src={WorkSVG} alt='Working' />
         </div>
       </Layout>
     </>

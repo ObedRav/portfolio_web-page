@@ -22,16 +22,16 @@ const CustomLink = ({ href, title, className = '' }) => {
   );
 };
 
-const CustomHamburguerLink = ({ href, title, className = '', toggle}) => {
+const CustomHamburguerLink = ({ href, title, className = '', toggle }) => {
   const router = useRouter();
 
   const handleClick = () => {
     toggle();
     router.push(href);
-  }
+  };
 
   return (
-    <button href={ href } className={`${className} relative group text-light dark:text-dark my-2`} onClick={ handleClick }>
+    <button href={href} className={`${className} relative group text-light dark:text-dark my-2`} onClick={handleClick}>
       {title}
 
       <span
@@ -49,19 +49,19 @@ const Navbar = () => {
 
   const handleHamburgerMenu = () => {
     setIsOpen(!isOpen);
-  }
+  };
 
   return (
     <header className='w-full px-32 py-8 font-medium flex items-center justify-between dark:text-light relative z-10 lg:px-16 md:12 sm:8'>
 
-      { /** Three lines */ }
-      <button className='lg:flex flex-col justify-center items-center hidden' onClick={ handleHamburgerMenu }>
-        <span className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
-        <span className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-        <span className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm translate-y-0.5 ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
+      {/** Three lines */}
+      <button className='lg:flex flex-col justify-center items-center hidden' onClick={handleHamburgerMenu}>
+        <span className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`} />
+        <span className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${isOpen ? 'opacity-0' : 'opacity-100'}`} />
+        <span className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm translate-y-0.5 ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`} />
       </button>
 
-      { /** Normal Menu */ }
+      {/** Normal Menu */}
       <div className='w-full flex justify-between items-center lg:hidden'>
         <nav>
           <CustomLink href='/' title='Home' className='mr-4' />
@@ -73,7 +73,7 @@ const Navbar = () => {
         <nav className='flex items-center justify-center flex-wrap'>
           <motion.a href='https://github.com/ObedRav' target='_blank' whileHover={{ y: -3 }} className='w-6 mr-3' whileTap={{ scale: 0.8 }}><GithubIcon /></motion.a>
           <motion.a href='https://www.linkedin.com/in/obedrav-developer' target='_blank' whileHover={{ y: -3 }} className='w-6' whileTap={{ scale: 0.8 }}><LinkedInIcon /></motion.a>
-          
+
           <motion.button
             onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}
             className={`ml-3 flex items-center justify-center rounded-full p-1 ${mode === 'light' ? 'bg-dark text-light' : 'bg-light text-dark'}`}
@@ -85,43 +85,41 @@ const Navbar = () => {
         </nav>
       </div>
 
-      { /** Hamburguer Menu */ }
+      {/** Hamburguer Menu */}
       <AnimatePresence>
         {
-          isOpen ?
+          isOpen
 
-          <motion.div
-            className='min-w-[70vw] flex flex-col justify-between z-30 items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark/90 dark:bg-light/75 rounded-lg backdrop-blur-md py-32'
-            initial={{ scale: 0, opacity: 0, x: '-50%', y: '-50%' }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0, opacity: 0, x: '-50%', y: '-50%' }}
-            transition={{ duration: 0.4 }} // Adjust the duration as needed
-          >
-            <nav className='flex items-center flex-col justify-center'>
-              <CustomHamburguerLink href='/' title='Home' className='' toggle={ handleHamburgerMenu } />
-              <CustomHamburguerLink href='/about' title='About' className='' toggle={ handleHamburgerMenu } />
-              <CustomHamburguerLink href='/projects' title='Projects' className='' toggle={ handleHamburgerMenu } />
-              <CustomHamburguerLink href='/articles' title='Articles' className='' toggle={ handleHamburgerMenu } />
-            </nav>
-
-            <nav className='flex items-center justify-center flex-wrap mt-2'>
-              <motion.a href='https://github.com/ObedRav' target='_blank' whileHover={{ y: -3 }} className='w-6 mr-3 bg-light rounded-full dark:bg-dark sm:mx-1' whileTap={{ scale: 0.8 }}><GithubIcon /></motion.a>
-              <motion.a href='https://www.linkedin.com/in/obedrav-developer' target='_blank' whileHover={{ y: -3 }} className='w-6 sm:mx-1' whileTap={{ scale: 0.8 }}><LinkedInIcon /></motion.a>
-              
-              <motion.button
-                onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}
-                className={`ml-3 flex items-center justify-center rounded-full p-1 ${mode === 'light' ? 'bg-dark text-light' : 'bg-light text-dark'} sm:mx-1`}
-                whileHover={{ y: -3 }}
-                whileTap={{ scale: 0.8 }}
+            ? <motion.div
+                className='min-w-[70vw] flex flex-col justify-between z-30 items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark/90 dark:bg-light/75 rounded-lg backdrop-blur-md py-32'
+                initial={{ scale: 0, opacity: 0, x: '-50%', y: '-50%' }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0, opacity: 0, x: '-50%', y: '-50%' }}
+                transition={{ duration: 0.4 }}
               >
-                {mode === 'dark' ? <SunIcon className='fill-dark' /> : <MoonIcon className='w-4 h-4 fill-dark' />}
-              </motion.button>
-            </nav>
-          </motion.div>
+              <nav className='flex items-center flex-col justify-center'>
+                <CustomHamburguerLink href='/' title='Home' className='' toggle={handleHamburgerMenu} />
+                <CustomHamburguerLink href='/about' title='About' className='' toggle={handleHamburgerMenu} />
+                <CustomHamburguerLink href='/projects' title='Projects' className='' toggle={handleHamburgerMenu} />
+                <CustomHamburguerLink href='/articles' title='Articles' className='' toggle={handleHamburgerMenu} />
+              </nav>
 
-          :
+              <nav className='flex items-center justify-center flex-wrap mt-2'>
+                <motion.a href='https://github.com/ObedRav' target='_blank' whileHover={{ y: -3 }} className='w-6 mr-3 bg-light rounded-full dark:bg-dark sm:mx-1' whileTap={{ scale: 0.8 }}><GithubIcon /></motion.a>
+                <motion.a href='https://www.linkedin.com/in/obedrav-developer' target='_blank' whileHover={{ y: -3 }} className='w-6 sm:mx-1' whileTap={{ scale: 0.8 }}><LinkedInIcon /></motion.a>
 
-          null
+                <motion.button
+                  onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}
+                  className={`ml-3 flex items-center justify-center rounded-full p-1 ${mode === 'light' ? 'bg-dark text-light' : 'bg-light text-dark'} sm:mx-1`}
+                  whileHover={{ y: -3 }}
+                  whileTap={{ scale: 0.8 }}
+                >
+                  {mode === 'dark' ? <SunIcon className='fill-dark' /> : <MoonIcon className='w-4 h-4 fill-dark' />}
+                </motion.button>
+              </nav>
+            </motion.div>
+
+            : null
 
         }
       </AnimatePresence>
@@ -133,6 +131,5 @@ const Navbar = () => {
     </header>
   );
 };
-
 
 export default Navbar;

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Layout from '@/components/Layout';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -11,7 +11,7 @@ import HireMe from '@/components/HireMe';
 import lightBulb from '../../public/svgs/lightBulb.svg';
 import TransitionEffect from '@/components/TransitionEffect';
 
-export default function Home() {
+export default function Home () {
   return (
     <>
       <Head>
@@ -19,7 +19,7 @@ export default function Home() {
         <meta name='description' content='Portfolio for ObedRav' />
       </Head>
 
-    <TransitionEffect />
+      <TransitionEffect />
 
       <main className='flex items-center text-dark w-full min-h-screen dark:text-light'>
         <Layout className='pt-0 md:p-16 sm:pt-8'>
@@ -34,7 +34,7 @@ export default function Home() {
                 exit={{ y: 100, opacity: 0 }}
                 className='w-1/2 mr-10 md:w-full'
               >
-                <Image src={ DevPicture } alt='DevImage' className='w-full h-auto lg:hidden md:inline-block md:w-full' priority sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw' />
+                <Image src={DevPicture} alt='DevImage' className='w-full h-auto lg:hidden md:inline-block md:w-full' priority sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw' />
               </motion.div>
             </AnimatePresence>
 
@@ -68,7 +68,7 @@ export default function Home() {
                     <Link
                       href='https://drive.google.com/drive/folders/1hYrW3IAV-0B7t0ZI14OGOq6L9dGy219q?usp=sharing'
                       target='_blank'
-                      className='bg-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark border-2 border-solid border-transparent hover:border-dark dark:bg-light dark:text-dark hover:dark:text-light hover:dark:bg-dark hover:dark:border-light md:p-2 md:px-4 md:text-base'
+                      className='bg-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark border-2 border-solid border-transparent hover:border-dark dark:bg-light dark:text-dark hover:dark:text-light hover:dark:bg-dark hover:dark:border-light md:p-2 md:px-4 md:text-base' rel='noreferrer'
                     >
                       Resume <LinkArrow className='w-6 ml-1' />
                     </Link>
@@ -108,7 +108,7 @@ export default function Home() {
             whileTap={{ scale: 0.9 }}
             className='relative'
           >
-            <Image src={ lightBulb } alt='Light' className='w-full h-auto' />
+            <Image src={lightBulb} alt='Light' className='w-full h-auto' />
           </motion.div>
         </motion.div>
 
