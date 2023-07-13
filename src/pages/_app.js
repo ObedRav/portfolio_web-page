@@ -5,7 +5,6 @@ import { AnimatePresence } from 'framer-motion';
 import { Montserrat } from 'next/font/google';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import Favicon from '../../public/images/favicon.png';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -19,7 +18,7 @@ export default function App ({ Component, pageProps }) {
     <>
       <Head>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <link rel='icon' href={Favicon} />
+        <link rel='icon' href='../../public/images/favicon.png' />
       </Head>
       <main className={`${montserrat.variable} font-mont bg-light dark:bg-dark w-full min-h-screen`}>
         <Navbar />
