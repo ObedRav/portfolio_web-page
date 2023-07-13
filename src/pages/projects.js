@@ -117,33 +117,33 @@ const projects = () => {
                 <AnimatedText text='Unleashing the Creative Spark!' className='text-8xl mb-16' />
                 <div className='grid grid-cols-12 gap-24 gap-y-32'>
                     <div className='col-span-12'>
-                        <PrincipalProject type="Backend" title='VipTop10' summary='The VipTop10 API allows you to retrieve information about categories, countries, cities, and places, and provides filtering and recommendation features.' image={ VipTop10 } link='https://github.com/ObedRav/VipTop10' github='https://github.com/ObedRav/VipTop10'/>
+                        <PrincipalProject type="Backend" title='VipTop10' summary='The VipTop10 API allows you to retrieve information about categories, countries, cities, and places, and provides filtering and recommendation features.' image={ VipTop10 } link='https://github.com/ObedRav/VipTop10' github='https://github.com/ObedRav/VipTop10' priority />
                     </div>
                     <div className='col-span-6'>
-                        <Project type="Fronted" title='Mern Fronted' image={ MERNFronted } link='https://github.com/ObedRav/MERN-fronted' github='https://github.com/ObedRav/MERN-fronted'/>
+                        <Project type="Fronted" title='Mern Fronted' image={ MERNFronted } link='https://github.com/ObedRav/MERN-fronted' github='https://github.com/ObedRav/MERN-fronted' priority />
                     </div>
                     <div className='col-span-6'>
-                        <Project type="Backend" title='Mern Backend' image={ MERNBackend } link='https://github.com/ObedRav/MERN-backend' github='https://github.com/ObedRav/MERN-backend'/>
+                        <Project type="Backend" title='Mern Backend' image={ MERNBackend } link='https://github.com/ObedRav/MERN-backend' github='https://github.com/ObedRav/MERN-backend' priority />
                     </div>
 
                     <div className='col-span-12'>
-                        <PrincipalProject type="CLI" title='Stacks - LIFO, FIFO' summary='Command-line interface (CLI) to manage two different data structures: stack and queue.' image={ CLI } link='https://github.com/ObedRav/LIFO-FIFO_CMD' github='https://github.com/ObedRav/LIFO-FIFO_CMD'/>
+                        <PrincipalProject type="CLI" title='Stacks - LIFO, FIFO' summary='Command-line interface (CLI) to manage two different data structures: stack and queue.' image={ CLI } link='https://github.com/ObedRav/LIFO-FIFO_CMD' github='https://github.com/ObedRav/LIFO-FIFO_CMD' priority />
                     </div>
                     <div className='col-span-6'>
-                        <Project type="Fronted" title='Web Fronted' image={ Techium } link='https://github.com/ObedRav/holbertonschool-web_front_end' github='https://github.com/ObedRav/holbertonschool-web_front_end'/> 
+                        <Project type="Fronted" title='Web Fronted' image={ Techium } link='https://github.com/ObedRav/holbertonschool-web_front_end' github='https://github.com/ObedRav/holbertonschool-web_front_end' priority />
                     </div>
                     <div className='col-span-6'>
-                        <Project type="Web Full Stack" title='Jovian Carrers' image={ JovianCarrers } link='https://github.com/ObedRav/jovian-carrers-website' github='https://github.com/ObedRav/jovian-carrers-website'/> 
+                        <Project type="Web Full Stack" title='Jovian Carrers' image={ JovianCarrers } link='https://github.com/ObedRav/jovian-carrers-website' github='https://github.com/ObedRav/jovian-carrers-website' priority />
                     </div>
 
                     <div className='col-span-12'>
-                        <PrincipalProject type="Web Full Stack" title='ChatGPT Clone' summary='Text completions using the get-3.5 OpenAI model' image={ chatgptClone } link='https://github.com/ObedRav/Text_completions' github='https://github.com/ObedRav/Text_completions'/>
+                        <PrincipalProject type="Web Full Stack" title='ChatGPT Clone' summary='Text completions using the get-3.5 OpenAI model' image={ chatgptClone } link='https://github.com/ObedRav/Text_completions' github='https://github.com/ObedRav/Text_completions' priority />
                     </div>
                     <div className='col-span-6'>
-                        <Project type="Low Level" title='Low Level Programming' image={ LowLevel } link='https://github.com/ObedRav/Low_level_programming' github='https://github.com/ObedRav/Low_level_programming'/> 
+                        <Project type="Low Level" title='Low Level Programming' image={ LowLevel } link='https://github.com/ObedRav/Low_level_programming' github='https://github.com/ObedRav/Low_level_programming' priority />
                     </div>
                     <div className='col-span-6'>
-                        <Project type="Higher Level" title='Higher Level Programming' image={ HigherLevel } link='https://github.com/ObedRav/Higher_level_programming'/> 
+                        <Project type="Higher Level" title='Higher Level Programming' image={ HigherLevel } link='https://github.com/ObedRav/Higher_level_programming' priority />
                     </div>
                 </div>
             </Layout>

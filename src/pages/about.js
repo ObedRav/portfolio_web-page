@@ -34,14 +34,14 @@ const about = () => {
                             the field, I have honed my skills in creating robust and scalable solutions.
                         </p>
 
-                        <p className='my-4'>
+                        <p className='my-4 font-medium'>
                             When it comes to backend development, I believe it goes beyond building fast and
                             functional systems. It's about solving problems and making a positive impact on
                             people's lives. I view backend development as a means to create innovative and
                             user-centric experiences that address real-world challenges.
                         </p>
 
-                        <p className='my-4'>
+                        <p className='my-4 font-medium'>
                             I thrive on challenges and constantly seek opportunities to push the boundaries of
                             what's possible in backend development. I'm always eager to explore new technologies,
                             frameworks, and methodologies to enhance my skills and deliver even better solutions.
