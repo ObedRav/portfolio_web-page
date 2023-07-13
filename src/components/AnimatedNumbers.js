@@ -1,32 +1,32 @@
-import React, { useEffect, useRef } from 'react'
-import { useInView, useMotionValue, useSpring } from 'framer-motion'
+import React, { useEffect, useRef } from 'react';
+import { useInView, useMotionValue, useSpring } from 'framer-motion';
 
 /**
  * The `AnimatedNumbers` component uses motion values and springs to animate a number value when it
  * comes into view.
  */
-const AnimatedNumbers = ({value}) => {
-    const ref = useRef(null);
+const AnimatedNumbers = ({ value }) => {
+  const ref = useRef(null);
 
-    const motionValue = useMotionValue(0);
-    const springValue = useSpring(motionValue, { duration: 3000 });
-    const isInView = useInView(ref, { once: true });
+  const motionValue = useMotionValue(0);
+  const springValue = useSpring(motionValue, { duration: 3000 });
+  const isInView = useInView(ref, { once: true });
 
-    useEffect(() => {
-        if (isInView) {
-            motionValue.set(value)
-        }
-    }, [isInView, value, motionValue]);
+  useEffect(() => {
+    if (isInView) {
+      motionValue.set(value);
+    }
+  }, [isInView, value, motionValue]);
 
-    useEffect(() => {
-        springValue.on('change', (latest) => {
-            if (ref.current && latest.toFixed(0) <= value) {
-                ref.current.textContent = latest.toFixed(0);
-            }
-        })
-    }, [springValue, value])
+  useEffect(() => {
+    springValue.on('change', (latest) => {
+      if (ref.current && latest.toFixed(0) <= value) {
+        ref.current.textContent = latest.toFixed(0);
+      }
+    });
+  }, [springValue, value]);
 
-    return <span ref={ref}></span>
-}
+  return <span ref={ref} />;
+};
 
 export default AnimatedNumbers;
