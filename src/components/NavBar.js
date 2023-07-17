@@ -61,6 +61,13 @@ const Navbar = () => {
     setIsLanguageSelectorOpen(!isLanguageSelectorOpen);
   };
 
+  useEffect(() => {
+    if (languageInitialized) {
+      changeLanguage(language)
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [languageInitialized]);
+
   return (
     <header className='w-full px-32 py-8 font-medium flex items-center justify-between dark:text-light relative z-10 lg:px-16 md:12 sm:8'>
       {/* Three lines */}
