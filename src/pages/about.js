@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import AnimatedText from '@/components/AnimatedText';
+import { useTranslation } from 'react-i18next';
 import Layout from '@/components/Layout';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -10,6 +11,9 @@ import Skills from '@/components/Skills';
 import TransitionEffect from '@/components/TransitionEffect';
 
 const about = () => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const { t } = useTranslation();
+
   return (
     <>
       <Head>
@@ -21,31 +25,15 @@ const about = () => {
 
       <main className='flex w-full flex-col items-center justify-center dark:text-light'>
         <Layout className='pt-16'>
-          <AnimatedText text='Code Crafted with Heart and Mind!' className='text-8xl mb-16 lg:text-7xl sm:text-6xl xs:text-4xl sm:mb-8' />
+          <AnimatedText text={t('about.header')} className='text-8xl mb-16 lg:text-7xl sm:text-6xl xs:text-4xl sm:mb-8' />
           <div className='grid w-full grid-cols-8 gap-16 sm:gap-8'>
 
             {/** About me and text */}
             <div className='col-span-3 flex flex-col items-start justify-start xl:col-span-4 md:order-2 md:col-span-8'>
-              <h2 className='mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75'>About me</h2>
-
-              <p className='font-medium'>
-                Hi, I'm <b>Obed Rayo</b>, a passionate software developer with expertise in full-stack
-                web development and a specialization in backend technologies. With experience in
-                the field, I have honed my skills in creating robust and scalable solutions.
-              </p>
-
-              <p className='my-4 font-medium'>
-                When it comes to backend development, I believe it goes beyond building fast and
-                functional systems. It's about solving problems and making a positive impact on
-                people's lives. I view backend development as a means to create innovative and
-                user-centric experiences that address real-world challenges.
-              </p>
-
-              <p className='my-4 font-medium'>
-                I thrive on challenges and constantly seek opportunities to push the boundaries of
-                what's possible in backend development. I'm always eager to explore new technologies,
-                frameworks, and methodologies to enhance my skills and deliver even better solutions.
-              </p>
+              <h2 className='mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75'>{t('about.aboutMe')}</h2>
+              <p className='font-medium'>{t('about.paragraph1')}</p>
+              <p className='my-4 font-medium'>{t('about.paragraph2')}</p>
+              <p className='my-4 font-medium'>{t('about.paragraph3')}</p>
             </div>
 
             {/** PROFILE PICTURE */}
@@ -61,21 +49,21 @@ const about = () => {
                 <span className='inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl'>
                   <AnimatedNumbers value={3000} />+
                 </span>
-                <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75 xl:text-center md:text-lg sm:text-base xs:text-sm'>Development Hours</h2>
+                <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75 xl:text-center md:text-lg sm:text-base xs:text-sm'>{t('about.numbersText1')}</h2>
               </div>
 
               <div className='flex flex-col items-end justify-center xl:items-center '>
                 <span className='inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl'>
                   <AnimatedNumbers value={70} />+
                 </span>
-                <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75 xl:text-center md:text-lg sm:text-base xs:text-sm'>Projects Completed</h2>
+                <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75 xl:text-center md:text-lg sm:text-base xs:text-sm'>{t('about.numbersText2')}</h2>
               </div>
 
               <div className='flex flex-col items-end justify-center xl:items-center '>
                 <span className='inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl'>
                   <AnimatedNumbers value={1} />+
                 </span>
-                <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75 xl:text-center md:text-lg sm:text-base xs:text-sm'>Years of Experience</h2>
+                <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75 xl:text-center md:text-lg sm:text-base xs:text-sm'>{t('about.numbersText3')}</h2>
               </div>
 
             </div>

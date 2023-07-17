@@ -10,8 +10,11 @@ import { LinkArrow } from '@/components/icons';
 import HireMe from '@/components/HireMe';
 import lightBulb from '../../public/svgs/lightBulb.svg';
 import TransitionEffect from '@/components/TransitionEffect';
+import { useTranslation } from 'react-i18next';
 
 export default function Home () {
+  const { t } = useTranslation();
+
   return (
     <>
       <Head>
@@ -40,7 +43,7 @@ export default function Home () {
 
             {/** Texts */}
             <div className='w-1/2 flex flex-col items-center self-center lg:w-full lg:text-center md:mt-10'>
-              <AnimatedText text='Turning Dreams Into Reality With Code' className='!text-6xl !text-left xl:!text-5xl lg:!text-center md:!text-5xl sm:!text-3xl' />
+              <AnimatedText text={t('index.heading')} className='!text-6xl !text-left xl:!text-5xl lg:!text-center md:!text-5xl sm:!text-3xl' />
               <AnimatePresence>
                 <motion.p
                   key='paragraph'
@@ -50,8 +53,7 @@ export default function Home () {
                   exit={{ y: 100, opacity: 0 }}
                   className='my-4 text-base font-medium md:text-sm sm:text-xs'
                 >
-                  As a software engineer developer, I am dedicated to turning ideas into innovative solutions through code.
-                  Explore my latest projects, where I showcase my expertise in various technologies and web development.
+                  {t('index.description')}
                 </motion.p>
               </AnimatePresence>
 
@@ -70,7 +72,7 @@ export default function Home () {
                       target='_blank'
                       className='bg-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark border-2 border-solid border-transparent hover:border-dark dark:bg-light dark:text-dark hover:dark:text-light hover:dark:bg-dark hover:dark:border-light md:p-2 md:px-4 md:text-base' rel='noreferrer'
                     >
-                      Resume <LinkArrow className='w-6 ml-1' />
+                      {t('index.resume')} <LinkArrow className='w-6 ml-1' />
                     </Link>
                   </motion.div>
                 </AnimatePresence>
@@ -84,7 +86,7 @@ export default function Home () {
                     className='ml-4 text-lg font-medium text-dark underline dark:text-light md:text-base'
                   >
                     <Link href='mailto:rayovianamiltonobed@gmail.com' rel='noreferrer' target='_blank'>
-                      Contact Me
+                      {t('index.contact')}
                     </Link>
                   </motion.div>
                 </AnimatePresence>
