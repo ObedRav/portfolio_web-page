@@ -1,0 +1,59 @@
+{
+    "index": {
+      "heading": "Haciendo sueños realidad a través del código",
+      "description": "Como desarrollador de software, me dedico a convertir ideas en soluciones innovadoras a través del código. Explora mis últimos proyectos, donde muestro mi experiencia en diversas tecnologías y desarrollo web.",
+      "resume": "Currículum",
+      "contact": "Contáctame"
+    },
+    "navbar": {
+        "home": "Principal",
+        "about": "Acerca",
+        "projects": "Projectos",
+        "articles": "Articulos"
+    },
+    "about": {
+        "header": "Código creado con corazón y mente!",
+        "aboutMe": "Conoceme",
+        "paragraph1": "Hola, soy Obed Rayo, un apasionado desarrollador de software con experiencia en desarrollo web full-stack y especialización en tecnologías back-end. Con experiencia en el campo, he perfeccionado mis habilidades para crear soluciones robustas y escalables.",
+        "paragraph2": "Cuando se trata de desarrollo back-end, creo que va más allá de construir sistemas rápidos y funcionales. Se trata de resolver problemas y tener un impacto positivo en la vida de las personas. Veo el desarrollo de back-end como un medio para crear experiencias innovadoras y centradas en el usuario que aborden los desafíos del mundo real.",
+        "paragraph3": "Disfruto de los desafíos y busco constantemente oportunidades para ampliar los límites de lo que es posible en el desarrollo de back-end. Siempre estoy ansioso por explorar nuevas tecnologías, marcos y metodologías para mejorar mis habilidades y ofrecer soluciones aún mejores.",
+        "numbersText1": "Horas de Desarrollo",
+        "numbersText2": "Projectos Completados",
+        "numbersText3": "Años de Experiencia"
+    },
+    "footer": {
+        "text": "Todos los derechos reservados."
+    },
+    "skills": {
+        "skills": "Habilidades"
+    },
+    "projects": {
+        "header": "Desatando la Chispa Creativa!",
+        "projects": {
+          "backend": "Backend",
+          "frontend": "Frontend",
+          "cli": "CLI",
+          "fullStack": "Full Stack",
+          "vipTop10Title": "VipTop10",
+          "vipTop10Summary": "La API de VipTop10 te permite obtener información sobre categorías, países, ciudades y lugares, y proporciona funciones de filtrado y recomendación.",
+          "mernFrontendTitle": "Mern Frontend",
+          "mernBackendTitle": "Mern Backend",
+          "cliTitle": "Stacks - LIFO, FIFO",
+          "cliSummary": "Interfaz de línea de comandos (CLI) para administrar dos estructuras de datos diferentes: pila y cola.",
+          "webFrontendTitle": "Web Frontend",
+          "jovianCareersTitle": "Jovian Careers",
+          "chatGptCloneTitle": "ChatGPT Clone",
+          "chatGptCloneSummary": "Completar texto usando el modelo OpenAI get-3.5.",
+          "lowLevelTitle": "Programación de Bajo Nivel",
+          "higherLevelTitle": "Programación de Alto Nivel"
+        },
+        "link": {
+          "visitProject": "Visitar Proyecto",
+          "visit": "Visitar"
+        }
+    },
+    "articles": {
+        "work": "Trabajando en ello..."
+    }
+}
+  
