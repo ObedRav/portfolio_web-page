@@ -159,6 +159,7 @@ const Navbar = () => {
 
                 {languageInitialized && (
                   <Settings
+                    className='flex items-center justify-center'
                     handleLanguageSelector={handleLanguageSelector}
                     isLanguageSelectorOpen={isLanguageSelectorOpen}
                     isOpen={isOpen}
