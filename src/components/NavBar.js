@@ -99,11 +99,11 @@ const Navbar = () => {
             {mode === 'dark' ? <SunIcon className='fill-dark' /> : <MoonIcon className='w-4 h-4 fill-dark' />}
           </motion.button>
           {languageInitialized && (
-          <Settings
-            handleLanguageSelector={handleLanguageSelector}
-            isLanguageSelectorOpen={isLanguageSelectorOpen}
-            isOpen={isOpen}
-          />
+            <Settings
+              handleLanguageSelector={handleLanguageSelector}
+              isLanguageSelectorOpen={isLanguageSelectorOpen}
+              isOpen={isOpen}
+            />
           )}
         </nav>
       </div>
@@ -158,12 +158,12 @@ const Navbar = () => {
                 </motion.button>
 
                 {languageInitialized && (
-                <Settings
-                  className='flex items-center justify-center'
-                  handleLanguageSelector={handleLanguageSelector}
-                  isLanguageSelectorOpen={isLanguageSelectorOpen}
-                  isOpen={isOpen}
-                />
+                  <Settings
+                    className='flex items-center justify-center'
+                    handleLanguageSelector={handleLanguageSelector}
+                    isLanguageSelectorOpen={isLanguageSelectorOpen}
+                    isOpen={isOpen}
+                  />
                 )}
               </nav>
             </motion.div>
