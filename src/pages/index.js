@@ -7,12 +7,13 @@ import DevPicture from '../../public/images/developer-pic-1.png';
 import AnimatedText from '@/components/AnimatedText';
 import Link from 'next/link';
 import { LinkArrow } from '@/components/icons';
-import HireMe from '@/components/HireMe';
 import lightBulb from '../../public/svgs/lightBulb.svg';
 import TransitionEffect from '@/components/TransitionEffect';
 import { useTranslation } from 'react-i18next';
+import useThemeSwitcher from '@/components/hooks/useThemeSwitcher';
 
 export default function Home () {
+  const [mode, setMode] = useThemeSwitcher();
   const { t } = useTranslation();
 
   return (
@@ -95,8 +96,6 @@ export default function Home () {
           </div>
         </Layout>
 
-        <HireMe />
-
         <motion.div
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -110,7 +109,7 @@ export default function Home () {
             whileTap={{ scale: 0.9 }}
             className='relative'
           >
-            <Image src={lightBulb} alt='Light' className='w-full h-auto' />
+            <Image src={lightBulb} alt='Light' className='w-full h-auto' onClick={() => setMode(mode === 'light' ? 'dark' : 'light')} />
           </motion.div>
         </motion.div>
 
