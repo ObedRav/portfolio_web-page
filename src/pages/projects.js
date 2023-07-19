@@ -18,6 +18,7 @@ import JovianCarrers from '../../public/images/projects/JovianCarrers.png';
 import chatgptClone from '../../public/images/projects/chatgptClone.png';
 import LowLevel from '../../public/images/projects/LowLevel.svg';
 import HigherLevel from '../../public/images/projects/HigherLevel.png';
+import BankCore from '../../public/images/projects/BankCore.jpg'
 import TransitionEffect from '@/components/TransitionEffect';
 
 const PrincipalProject = ({ type, title, summary, image, link = '', github = '' }) => {
@@ -205,6 +206,20 @@ const projects = () => {
                 title={t('projects.projects.higherLevelTitle')}
                 image={HigherLevel}
                 link='https://github.com/ObedRav/Higher_level_programming'
+              />
+            </div>
+          </div>
+
+          <AnimatedText text="In progress..." className='text-8xl mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl pt-12' />
+          <div className='grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0'>
+            <div className='col-span-12'>
+              <PrincipalProject
+                  type={t('projects.projects.backend')}
+                  title={t('projects.projects.BankCoreTitle')}
+                  summary={t('projects.projects.BankCoreSummary')}
+                  image={BankCore}
+                  link='https://github.com/ObedRav/BankCore'
+                  github='https://github.com/ObedRav/BankCore'
               />
             </div>
           </div>

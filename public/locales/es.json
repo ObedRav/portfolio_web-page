@@ -45,7 +45,8 @@
           "chatGptCloneTitle": "ChatGPT Clone",
           "chatGptCloneSummary": "Completar texto usando el modelo OpenAI get-3.5.",
           "lowLevelTitle": "Programación de Bajo Nivel",
-          "higherLevelTitle": "Programación de Alto Nivel"
+          "higherLevelTitle": "Programación de Alto Nivel",
+          "BankCoreSummary": "El sistema backend de BankCore está diseñado para proporcionar funcionalidades esenciales y soporte para una aplicación bancaria. Está construido usando Python y el framework web Django, asegurando escalabilidad, seguridad y confiabilidad."
         },
         "link": {
           "visitProject": "Visitar Proyecto",
