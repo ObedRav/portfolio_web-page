@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import AnimatedText from '@/components/AnimatedText';
+import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import Layout from '@/components/Layout';
 import Head from 'next/head';
@@ -9,6 +10,7 @@ import profilePicture from '../../public/images/profile_picture.png';
 import AnimatedNumbers from '@/components/AnimatedNumbers';
 import Skills from '@/components/Skills';
 import TransitionEffect from '@/components/TransitionEffect';
+import schemaMarkup from '@/components/schema';
 
 const about = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -16,10 +18,17 @@ const about = () => {
 
   return (
     <>
-      <Head>
-        <title>ObedRav | About</title>
-        <meta name='description' content='about developer page' />
-      </Head>
+      <Helmet>
+        <title>Obed Rayo - Software Engineer | about</title>
+        <meta name='description' content='Explore the portfolio of Obed Rayo, a skilled Software Engineer. Discover projects, skills, and expertise in web development and more.' />
+        <link rel="canonical" href="https://www.obedrav.dev/about" />
+        <meta property="og:title" content="Obed Rayo - Software Engineer | about" />
+        <meta property="og:description" content="Explore the portfolio of Obed Rayo, a skilled Software Engineer. Discover projects, skills, and expertise in web development and more." />
+        <meta property="og:image" content="https://www.obedrav.dev/images/developer-pic-1.png" />
+        <meta property="og:url" content="https://www.obedrav.dev/about" />
+        <meta property="og:type" content="website" />
+        <script type='application/ld+json'>{JSON.stringify(schemaMarkup)}</script>
+      </Helmet>
 
       <TransitionEffect />
 
@@ -39,7 +48,7 @@ const about = () => {
             {/** PROFILE PICTURE */}
             <div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8 dark:bg-dark dark:border-light xl:col-sapn-4 md:order-1 md:col-span-8 lg:col-span-4 xl:col-span-4'>
               <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light' />
-              <Image src={profilePicture} alt='profile picture' className='w-full h-auto rounded-2xl' priority sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw' />
+              <Image src={profilePicture} alt='Obed Rayo - Software Engineer' className='w-full h-auto rounded-2xl' priority sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw' />
             </div>
 
             {/** Numbers */}
