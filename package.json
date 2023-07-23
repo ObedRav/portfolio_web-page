@@ -10,7 +10,7 @@
     "test": "semistandard --fix"
   },
   "dependencies": {
-    "eslint": "8.43.0",
+    "eslint": "8.44.0",
     "eslint-config-next": "13.4.7",
     "framer-motion": "10.12.17",
     "i18next": "23.2.11",
