@@ -1,6 +1,7 @@
 import AnimatedText from '@/components/AnimatedText';
 import Layout from '@/components/Layout';
 import { GithubIcon } from '@/components/icons';
+import { Helmet } from 'react-helmet';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -20,6 +21,7 @@ import LowLevel from '../../public/images/projects/LowLevel.svg';
 import HigherLevel from '../../public/images/projects/HigherLevel.png';
 import BankCore from '../../public/images/projects/BankCore.jpg'
 import TransitionEffect from '@/components/TransitionEffect';
+import schemaMarkup from '@/components/schema';
 
 const PrincipalProject = ({ type, title, summary, image, link = '', github = '' }) => {
   const [ref, inView] = useInView();
@@ -112,10 +114,17 @@ const projects = () => {
 
   return (
     <>
-      <Head>
-        <title>ObedRav | Projects Page</title>
-        <meta name='description' content='projects developer page' />
-      </Head>
+      <Helmet>
+        <title>Obed Rayo - Software Engineer | projects</title>
+        <meta name='description' content='Explore the portfolio of Obed Rayo, a skilled Software Engineer. Discover projects, skills, and expertise in web development and more.' />
+        <link rel="canonical" href="https://www.obedrav.dev/projects" />
+        <meta property="og:title" content="Obed Rayo - Software Engineer | projects" />
+        <meta property="og:description" content="Explore the portfolio of Obed Rayo, a skilled Software Engineer. Discover projects, skills, and expertise in web development and more." />
+        <meta property="og:image" content="https://www.obedrav.dev/images/developer-pic-1.png" />
+        <meta property="og:url" content="https://www.obedrav.dev/projects" />
+        <meta property="og:type" content="website" />
+        <script type='application/ld+json'>{JSON.stringify(schemaMarkup)}</script>
+      </Helmet>
 
       <TransitionEffect />
 
