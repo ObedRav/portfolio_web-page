@@ -1,6 +1,6 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import Layout from '@/components/Layout';
-import Head from 'next/head';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import DevPicture from '../../public/images/developer-pic-1.png';
@@ -11,6 +11,7 @@ import lightBulb from '../../public/svgs/lightBulb.svg';
 import TransitionEffect from '@/components/TransitionEffect';
 import { useTranslation } from 'react-i18next';
 import useThemeSwitcher from '@/components/hooks/useThemeSwitcher';
+import schemaMarkup from '@/components/schema';
 
 export default function Home () {
   const [mode, setMode] = useThemeSwitcher();
@@ -18,10 +19,17 @@ export default function Home () {
 
   return (
     <>
-      <Head>
-        <title>ObedRav</title>
-        <meta name='description' content='Portfolio for ObedRav' />
-      </Head>
+      <Helmet>
+        <title>Obed Rayo - Software Engineer</title>
+        <meta name='description' content='Explore the portfolio of Obed Rayo, a skilled Software Engineer. Discover projects, skills, and expertise in web development and more.' />
+        <link rel="canonical" href="https://www.obedrav.dev/" />
+        <meta property="og:title" content="Obed Rayo - Software Engineer" />
+        <meta property="og:description" content="Explore the portfolio of Obed Rayo, a skilled Software Engineer. Discover projects, skills, and expertise in web development and more." />
+        <meta property="og:image" content="https://www.obedrav.dev/images/developer-pic-1.png" />
+        <meta property="og:url" content="https://www.obedrav.dev/" />
+        <meta property="og:type" content="website" />
+        <script type='application/ld+json'>{JSON.stringify(schemaMarkup)}</script>
+      </Helmet>
 
       <TransitionEffect />
 
@@ -38,7 +46,7 @@ export default function Home () {
                 exit={{ y: 100, opacity: 0 }}
                 className='w-1/2 mr-10 md:w-full'
               >
-                <Image src={DevPicture} alt='DevImage' className='w-full h-auto lg:hidden md:inline-block md:w-full' priority sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw' />
+                <Image src={DevPicture} alt='Software Engineer Obed Rayo Recrated Picture' className='w-full h-auto lg:hidden md:inline-block md:w-full' priority sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw' />
               </motion.div>
             </AnimatePresence>
 
