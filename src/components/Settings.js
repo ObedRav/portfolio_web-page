@@ -25,7 +25,7 @@ const Settings = ({ handleLanguageSelector, isLanguageSelectorOpen, isOpen, clas
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0 }}
         >
-          <LanguageSelector />
+          <LanguageSelector onCloseMenu={handleLanguageSelector} />
         </motion.div>
       )}
     </div>
