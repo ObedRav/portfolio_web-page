@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Layout from '@/components/Layout';
 import Image from 'next/image';
@@ -10,11 +10,9 @@ import { LinkArrow } from '@/components/icons';
 import lightBulb from '../../public/svgs/lightBulb.svg';
 import TransitionEffect from '@/components/TransitionEffect';
 import { useTranslation } from 'react-i18next';
-import useThemeSwitcher from '@/components/hooks/useThemeSwitcher';
 import schemaMarkup from '@/components/schema';
 
 export default function Home () {
-  const [mode, setMode] = useThemeSwitcher();
   const { t } = useTranslation();
 
   return (
@@ -117,7 +115,7 @@ export default function Home () {
             whileTap={{ scale: 0.9 }}
             className='relative'
           >
-            <Image src={lightBulb} alt='Light' className='w-full h-auto' onClick={() => setMode(mode === 'light' ? 'dark' : 'light')} />
+            <Image src={lightBulb} alt='Light' className='w-full h-auto' />
           </motion.div>
         </motion.div>
 

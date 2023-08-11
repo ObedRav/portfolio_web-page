@@ -3,7 +3,6 @@ import AnimatedText from '@/components/AnimatedText';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import Layout from '@/components/Layout';
-import Head from 'next/head';
 import Image from 'next/image';
 import React from 'react';
 import profilePicture from '../../public/images/profile_picture.png';

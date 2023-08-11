@@ -2,7 +2,6 @@ import AnimatedText from '@/components/AnimatedText';
 import Layout from '@/components/Layout';
 import { GithubIcon } from '@/components/icons';
 import { Helmet } from 'react-helmet';
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
@@ -24,29 +23,16 @@ import TransitionEffect from '@/components/TransitionEffect';
 import schemaMarkup from '@/components/schema';
 
 const PrincipalProject = ({ type, title, summary, image, link = '', github = '' }) => {
-  const [ref, inView] = useInView();
-  const [showDiv, setShowDiv] = useState(false);
   const { t } = useTranslation();
-
-  const handleAnimationStart = () => {
-    setShowDiv(false);
-  };
-
-  const handleAnimationComplete = () => {
-    setShowDiv(true);
-  };
 
   return (
     <motion.article
-      ref={ref}
-      className='w-full flex items-center justify-between relative rounded-br-2xl rounded-3xl border border-solid border-dark bg-light shadow-2xl p-12 dark:bg-dark dark:border-light lg:flex-col lg:p-8 xs:rounded-2xl xs:rounded-br-3xl xs:p-4'
+      className='w-full flex items-center justify-between relative rounded-br-2xl rounded-3xl border border-solid border-dark shadow-2xl bg-light p-12 dark:bg-dark dark:border-light dark:shadow-white lg:flex-col lg:p-8 xs:rounded-2xl xs:rounded-br-3xl xs:p-4'
       initial={{ opacity: 0, y: 100 }}
-      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
-      transition={{ duration: 0.5 }}
-      onAnimationComplete={handleAnimationComplete}
-      onAnimationStart={handleAnimationStart}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+      viewport={{ once: true }}
     >
-      {showDiv && (<div className='absolute top-0 -right-3 -z-10 w-[100.5%] h-[103.5%] rounded-[2.5rem] bg-dark rounded-br-3xl dark:bg-light xs:-right-2 sm:h-[102%] xs:w-full xs:rounded-[1.5rem]' />)}
       <Link href={link} target='_blank' className='flex justify-center items-center w-1/2 cursor-pointer overflow-hidden rounded-lg lg:w-full' rel='noreferrer'>
         <Image src={image} alt={title} className='w-auto h-48' priority />
       </Link>
@@ -59,7 +45,7 @@ const PrincipalProject = ({ type, title, summary, image, link = '', github = '' 
         <p className='my-2 font-medium text-dark dark:text-light sm:text-sm'>{summary}</p>
         <div className='mt-2 flex items-center'>
           <Link href={github} className='w-10'> <GithubIcon /> </Link>
-          <Link href={link} target='_blank' className='ml-4 rounded-lg bg-dark text-light p-2 px-6 text-lg font-semibold dark:bg-light dark:text-dark sm:px-4 sm:text-base' rel='noreferrer'>{t('projects.link.visitProject')}</Link>
+          <Link href={link} target='_blank' className='ml-4 rounded-lg bg-dark text-light p-2 px-6 text-lg font-semibold dark:bg-light dark:text-dark  sm:px-4 sm:text-base' rel='noreferrer'>{t('projects.link.visitProject')}</Link>
         </div>
       </div>
     </motion.article>
@@ -67,30 +53,18 @@ const PrincipalProject = ({ type, title, summary, image, link = '', github = '' 
 };
 
 const Project = ({ type, title, image, link = '', github = '' }) => {
-  const [ref, inView] = useInView();
-  const [showDiv, setShowDiv] = useState(false);
   const { t } = useTranslation();
 
-  const handleAnimationStart = () => {
-    setShowDiv(false);
-  };
-
-  const handleAnimationComplete = () => {
-    setShowDiv(true);
-  };
 
   return (
     <motion.article
-      ref={ref}
-      className='w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark bg-light p-6 relative dark:bg-dark dark:border-light xs:p-4'
-      initial={{ opacity: 0, y: 50 }}
-      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.5 }}
-      onAnimationComplete={handleAnimationComplete}
-      onAnimationStart={handleAnimationStart}
+      className='w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark bg-light p-6 relative shadow-2xl dark:bg-dark dark:border-light dark:shadow-white xs:p-4'
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0}}
+      transition={{ duration: 0.4 }}
+      viewport={{ once: true }}
     >
-      {showDiv && (<div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103.5%] rounded-[2rem] bg-dark rounded-br-3xl dark:bg-light md:-right-2 md:w-[101%] xs:h-[102%] xs:rounded-[1.5rem]' />)}
-      <Link href={link} target='_blank' className='flex justify-center items-center w-full cursor-pointer overflow-hidden rounded-lg' rel='noreferrer'>
+    <Link href={link} target='_blank' className='flex justify-center items-center w-full cursor-pointer overflow-hidden rounded-lg' rel='noreferrer'>
         <Image src={image} alt={title} className='w-auto h-48' priority />
       </Link>
 
@@ -219,7 +193,7 @@ const projects = () => {
             </div>
           </div>
 
-          <AnimatedText text="In progress..." className='text-8xl mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl pt-12' />
+          <AnimatedText text={t('projects.progress')} className='text-8xl mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl pt-12' />
           <div className='grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0'>
             <div className='col-span-12'>
               <PrincipalProject
