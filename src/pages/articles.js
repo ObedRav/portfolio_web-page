@@ -34,7 +34,7 @@ const articles = () => {
         </div>
 
         <div className='flex justify-center'>
-          <Image src={WorkSVG} alt='Working' />
+          <Image src={WorkSVG} alt='Working' placeholder='blur' />
         </div>
       </Layout>
     </>

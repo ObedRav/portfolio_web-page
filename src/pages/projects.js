@@ -34,7 +34,7 @@ const PrincipalProject = ({ type, title, summary, image, link = '', github = '' 
       viewport={{ once: true }}
     >
       <Link href={link} target='_blank' className='flex justify-center items-center w-1/2 cursor-pointer overflow-hidden rounded-lg lg:w-full' rel='noreferrer'>
-        <Image src={image} alt={title} className='w-auto h-48' priority />
+        <Image src={image} alt={title} className='w-auto h-48' priority placeholder='blur' />
       </Link>
 
       <div className='w-1/2 flex flex-col items-start justify-between pl-6 lg:w-full lg:pl-0 lg:pt-6'>
@@ -65,7 +65,7 @@ const Project = ({ type, title, image, link = '', github = '' }) => {
       viewport={{ once: true }}
     >
     <Link href={link} target='_blank' className='flex justify-center items-center w-full cursor-pointer overflow-hidden rounded-lg' rel='noreferrer'>
-        <Image src={image} alt={title} className='w-auto h-48' priority />
+        <Image src={image} alt={title} className='w-auto h-48' priority placeholder='blur' />
       </Link>
 
       <div className='w-full flex flex-col items-start justify-between mt-4'>

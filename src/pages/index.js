@@ -44,7 +44,13 @@ export default function Home () {
                 exit={{ y: 100, opacity: 0 }}
                 className='w-1/2 mr-10 md:w-full'
               >
-                <Image src={DevPicture} alt='Software Engineer Obed Rayo Recrated Picture' className='w-full h-auto lg:hidden md:inline-block md:w-full' priority sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw' />
+                <Image 
+                  src={DevPicture}
+                  alt='Software Engineer Obed Rayo Recrated Picture'
+                  className='w-full h-auto lg:hidden md:inline-block md:w-full'
+                  priority sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw' 
+                  placeholder='blur'
+                />
               </motion.div>
             </AnimatePresence>
 
