@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  headers() {
+  async headers() {
     return [
       {
-        source: '/images/:all*',
+        source: '/_next/image/:all*',
         headers: [
           {
             key: 'Cache-Control',
