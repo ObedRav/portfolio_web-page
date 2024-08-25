@@ -4,21 +4,20 @@ import { GithubIcon } from '@/components/icons';
 import { Helmet } from 'react-helmet';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import { useTranslation } from 'react-i18next';
 // Images
-import VipTop10 from '../../public/images/projects/VipTop10.png';
-import Techium from '../../public/images/projects/Techium.png';
-import CLI from '../../public/images/projects/CLI.png';
-import MERNFronted from '../../public/images/projects/MERNFronted.png';
-import MERNBackend from '../../public/images/projects/MERNBackend.png';
-import JovianCarrers from '../../public/images/projects/JovianCarrers.png';
-import chatgptClone from '../../public/images/projects/chatgptClone.png';
+import VipTop10 from '../../public/images/projects/VipTop10.webp';
+import Techium from '../../public/images/projects/Techium.webp';
+import CLI from '../../public/images/projects/CLI.webp';
+import MERNFronted from '../../public/images/projects/MERNFronted.webp';
+import MERNBackend from '../../public/images/projects/MERNBackend.webp';
+import JovianCarrers from '../../public/images/projects/JovianCarrers.webp';
+import ChatGptClone from '../../public/images/projects/chatgptClone.webp';
 import LowLevel from '../../public/images/projects/LowLevel.svg';
-import HigherLevel from '../../public/images/projects/HigherLevel.png';
-import BankCore from '../../public/images/projects/BankCore.jpg'
+import HigherLevel from '../../public/images/projects/HigherLevel.webp';
+import BankCore from '../../public/images/projects/BankCore.webp'
 import TransitionEffect from '@/components/TransitionEffect';
 import schemaMarkup from '@/components/schema';
 
@@ -169,7 +168,7 @@ const projects = () => {
                 type={t('projects.projects.fullStack')}
                 title={t('projects.projects.chatGptCloneTitle')}
                 summary={t('projects.projects.chatGptCloneSummary')}
-                image={chatgptClone}
+                image={ChatGptClone}
                 link='https://github.com/ObedRav/Text_completions'
                 github='https://github.com/ObedRav/Text_completions'
               />

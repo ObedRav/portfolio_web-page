@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import Layout from '@/components/Layout';
 import Image from 'next/image';
 import React from 'react';
-import profilePicture from '../../public/images/profile_picture.png';
+import profilePicture from '../../public/images/profile_picture.webp';
 import AnimatedNumbers from '@/components/AnimatedNumbers';
 import Skills from '@/components/Skills';
 import TransitionEffect from '@/components/TransitionEffect';

@@ -14,14 +14,14 @@
     "eslint": "8.45.0",
     "framer-motion": "10.12.22",
     "i18next": "23.2.11",
-    "next": "13.4.10",
+    "next": "13.4.20-canary.13",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-helmet": "6.1.0",
     "react-i18next": "13.0.2",
     "react-intersection-observer": "9.5.2",
-    "react-particles": "^2.12.2",
-    "sharp": "0.32.3"
+    "react-particles": "2.12.2",
+    "sharp": "0.32.6"
   },
   "devDependencies": {
     "@types/react": "^18.2.20",

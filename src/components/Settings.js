@@ -1,6 +1,6 @@
 import React from 'react';
 import LanguageSelector from './LanguageSelector';
-import settingsIcon from '../../public/images/setting.png';
+import settingsIcon from '../../public/images/setting.webp';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
