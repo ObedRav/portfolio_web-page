@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import Layout from '@/components/Layout';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import DevPicture from '../../public/images/developer-pic-1.png';
+import DevPicture from '../../public/images/developer-pic-1.webp';
 import AnimatedText from '@/components/AnimatedText';
 import Link from 'next/link';
 import { LinkArrow } from '@/components/icons';
