@@ -72,10 +72,10 @@ const Navbar = () => {
   return (
     <header className='w-full px-32 py-8 font-medium flex items-center justify-between dark:text-light relative z-10 lg:px-16 md:12 sm:8'>
       {/* Three lines */}
-      <button className='lg:flex flex-col justify-center items-center hidden' onClick={handleHamburgerMenu}>
-        <span className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`} />
+      <button className='lg:flex flex-col justify-center items-center hidden' onClick={handleHamburgerMenu} aria-label="Hamburguer Menu Handler">
+        <span className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isOpen ? 'rotate-45 translate-y-2.5' : '-translate-y-0.5'}`} />
         <span className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${isOpen ? 'opacity-0' : 'opacity-100'}`} />
-        <span className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm translate-y-0.5 ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`} />
+        <span className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm translate-y-0.5 ${isOpen ? '-rotate-45 -translate-y-2.5' : 'translate-y-0.5'}`} />
       </button>
 
       {/* Normal Menu */}
