@@ -64,7 +64,7 @@ const Project = ({ type, title, image, link = '', github = '' }) => {
       viewport={{ once: true }}
     >
     <Link href={link} target='_blank' className='flex justify-center items-center w-full cursor-pointer overflow-hidden rounded-lg' rel='noreferrer'>
-        <Image src={image} alt={title} className='w-auto h-48' priority placeholder='blur' />
+        <Image src={image} alt={title} className='w-auto h-48' priority />
       </Link>
 
       <div className='w-full flex flex-col items-start justify-between mt-4'>
