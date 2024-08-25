@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import Logo from './Logo';
 import { useRouter } from 'next/router';
 import { GithubIcon, LinkedInIcon, MoonIcon, SunIcon } from './icons';
@@ -26,24 +26,25 @@ const CustomLink = ({ href, title, className = '' }) => {
 };
 
 const CustomHamburguerLink = ({ href, title, className = '', toggle }) => {
-  const router = useRouter();
+    const router = useRouter();
+    const buttonRef = useRef(null);
 
-  const handleClick = () => {
-    toggle();
-    router.push(href);
-  };
+    const handleClick = () => {
+        toggle();
+        router.push(href).then(r => r);
+    };
 
-  return (
-    <button href={href} className={`${className} relative group text-light dark:text-dark my-2`} onClick={handleClick}>
-      {title}
+    return (
+        <button ref={buttonRef} className={`${className} relative group text-light dark:text-dark my-2`} onClick={handleClick}>
+            {title}
 
-      <span
-        className={`h-[1px] inline-block bg-light absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 ${router.asPath === href ? 'w-full' : 'w-0'} dark:bg-dark`}
-      >
+            <span
+                className={`h-[1px] inline-block bg-light absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 ${router.asPath === href ? 'w-full' : 'w-0'} dark:bg-dark`}
+            >
         &nbsp;
       </span>
-    </button>
-  );
+        </button>
+    );
 };
 
 const Navbar = () => {
@@ -87,14 +88,34 @@ const Navbar = () => {
         </nav>
 
         <nav className='flex items-center justify-center flex-wrap'>
-          <motion.a href='https://github.com/ObedRav' target='_blank' whileHover={{ y: -3 }} className='w-6 mr-3' whileTap={{ scale: 0.8 }}><GithubIcon /></motion.a>
-          <motion.a href='https://www.linkedin.com/in/obedrav-developer' target='_blank' whileHover={{ y: -3 }} className='w-6' whileTap={{ scale: 0.8 }}><LinkedInIcon /></motion.a>
+            <motion.a
+                href='https://github.com/ObedRav'
+                target='_blank'
+                whileHover={{y: -3}}
+                className='w-6 mr-3'
+                whileTap={{scale: 0.8}}
+                aria-label="GitHub profile"
+            >
+                <GithubIcon aria-hidden="true"/>
+            </motion.a>
 
-          <motion.button
-            onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}
-            className={`ml-3 flex items-center justify-center rounded-full p-1 ${mode === 'light' ? 'bg-dark text-light' : 'bg-light text-dark'}`}
+            <motion.a
+                href='https://www.linkedin.com/in/obedrav-developer'
+                target='_blank'
+                whileHover={{y: -3}}
+                className='w-6'
+                whileTap={{scale: 0.8}}
+                aria-label="LinkedIn profile"
+            >
+                <LinkedInIcon aria-hidden="true"/>
+            </motion.a>
+
+            <motion.button
+                onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}
+                className={`ml-3 flex items-center justify-center rounded-full p-1 ${mode === 'light' ? 'bg-dark text-light' : 'bg-light text-dark'}`}
             whileHover={{ y: -3 }}
             whileTap={{ scale: 0.8 }}
+            aria-label={`Switch to ${mode === 'light' ? 'dark' : 'light'} mode`}
           >
             {mode === 'dark' ? <SunIcon className='fill-dark' /> : <MoonIcon className='w-4 h-4 fill-dark' />}
           </motion.button>

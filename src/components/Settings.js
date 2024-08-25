@@ -13,6 +13,7 @@ const Settings = ({ handleLanguageSelector, isLanguageSelectorOpen, isOpen, clas
         className='ml-3 flex items-center justify-center rounded-full p-1 text-light bg-light'
         whileHover={{ y: -3 }}
         whileTap={{ scale: 0.8 }}
+        aria-label="Change language"
       >
         <Image src={settingsIcon} alt='Settings Icon' className='w-6 h-6 fill-dark' style={{ transform: isLanguageSelectorOpen ? 'rotate(90deg)' : 'rotate(0deg)' }} />
       </motion.button>
