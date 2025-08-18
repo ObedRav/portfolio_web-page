@@ -7,14 +7,17 @@
     "build": "next build && next-sitemap",
     "start": "next start",
     "lint": "next lint",
-    "test": "semistandard --fix"
+    "test": "semistandard --fix",
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "preview": "npm run pages:build && wrangler pages dev",
+    "deploy": "npm run pages:build && wrangler pages deploy"
   },
   "dependencies": {
-    "eslint-config-next": "13.4.10",
     "eslint": "8.45.0",
+    "eslint-config-next": "13.4.10",
     "framer-motion": "11.3.30",
     "i18next": "23.14.0",
-    "next": "14.2.24",
+    "next": "14.2.31",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-helmet": "6.1.0",
@@ -23,6 +26,7 @@
     "sharp": "0.33.5"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.13",
     "@types/react": "^18.3.4",
     "@types/react-helmet": "^6.1.11",
     "autoprefixer": "10.4.20",
