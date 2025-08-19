@@ -1,0 +1,8 @@
+{
+  "name": "portfolio_web-page",
+  "compatibility_date": "2025-08-18",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "pages_build_output_dir": ".vercel/output/static"
+}
