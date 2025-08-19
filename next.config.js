@@ -2,7 +2,7 @@
 
 const nextConfig = {
   reactStrictMode: true,
-  trailingSlash: false,
+  trailingSlash: true,
   generateBuildId: async () => {
     return 'build'
   },
