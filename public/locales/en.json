@@ -1,12 +1,12 @@
 {
     "index": {
-      "heading": "Turning Dreams Into Reality With Code",
-      "description": "As a software engineer developer, I am dedicated to turning ideas into innovative solutions through code. Explore my latest projects, where I showcase my expertise in various technologies and web development.",
-      "resume": "Resume",
+      "heading": "Building Robust Backend Systems with Code",
+      "description": "As a backend software engineer with 3+ years of experience, I specialize in creating scalable microservices, optimizing system performance, and integrating AI solutions. Currently pursuing a Master's in Artificial Intelligence while working with technologies like Go, Kotlin, Python, and modern backend frameworks.",
+      "resume": "Download Resume",
       "contact": "Contact Me"
     },
     "meta": {
-      "description": "Portfolio for ObedRav"
+      "description": "Obed Rayo - Backend Software Engineer with 3+ years of experience in microservices, API development, and system optimization. Specializing in Go, Kotlin, Python, and AI integration."
     },
     "navbar": {
         "home": "Home",
@@ -15,11 +15,11 @@
         "articles": "Articles"
     },
     "about": {
-        "header": "Code Crafted with Heart and Mind!",
-        "aboutMe": "About me",
-        "paragraph1": "Hi, I'm Obed Rayo, a passionate software developer with expertise in full-stack web development and a specialization in backend technologies. With experience in the field, I have honed my skills in creating robust and scalable solutions.",
-        "paragraph2": "When it comes to backend development, I believe it goes beyond building fast and functional systems. It's about solving problems and making a positive impact on people's lives. I view backend development as a means to create innovative and user-centric experiences that address real-world challenges.",
-        "paragraph3": "I thrive on challenges and constantly seek opportunities to push the boundaries of what's possible in backend development. I'm always eager to explore new technologies, frameworks, and methodologies to enhance my skills and deliver even better solutions.",
+        "header": "Code Crafted with Precision and Performance!",
+        "aboutMe": "About Obed Rayo",
+        "paragraph1": "Hi, I'm Obed Rayo, a backend software engineer with over 3 years of professional experience specializing in microservices architecture, API development, and system optimization. I have a strong foundation in multiple programming languages including Go, Kotlin, Python, Java, TypeScript, and JavaScript.",
+        "paragraph2": "My expertise lies in building scalable backend systems using frameworks like Django, Flask, Spring Boot, FastAPI, and Echo. I've successfully engineered microservices that reduced latency by 40%, implemented distributed systems across multiple regions, and integrated AI models to automate critical business processes with 98% efficiency improvements.",
+        "paragraph3": "Currently pursuing a Master's degree in Artificial Intelligence, I combine traditional backend engineering with cutting-edge AI integration. I'm passionate about system design, performance optimization, and creating robust solutions that scale effectively while maintaining high reliability and security standards.",
         "numbersText1": "Development Hours",
         "numbersText2": "Projects Completed",
         "numbersText3": "Years of Experience"
@@ -28,41 +28,41 @@
         "text": "All Rights Reserved."
     },
     "skills": {
-        "skills": "Skills"
+        "skills": "Technical Skills & Expertise"
     },
     "projects": {
-        "header": "Unleashing the Creative Spark!",
+        "header": "Engineering Solutions Through Code!",
         "progress": "In Progress...",
         "projects": {
-          "backend": "Backend",
-          "frontend": "Frontend",
-          "cli": "CLI",
-          "fullStack": "Full Stack",
-          "vipTop10Title": "VipTop10",
-          "vipTop10Summary": "The VipTop10 API allows you to retrieve information about categories, countries, cities, and places, and provides filtering and recommendation features.",
-          "mernFrontendTitle": "Mern Fronted",
-          "mernBackendTitle": "Mern Backend",
-          "cliTitle": "Stacks - LIFO, FIFO",
-          "cliSummary": "Command-line interface (CLI) to manage two different data structures: stack and queue.",
-          "webFrontendTitle": "Web Fronted",
-          "jovianCareersTitle": "Jovian Careers",
-          "chatGptCloneTitle": "ChatGPT Clone",
-          "chatGptCloneSummary": "Text completions using the get-3.5 OpenAI model.",
-          "lowLevelType": "Low Level",
-          "lowLevelTitle": "Low Level Programming",
-          "higherLevelType": "Higher Level",
-          "higherLevelTitle": "Higher Level Programming",
-          "higherLevelSummary": "Higher-level programming projects.",
-          "BankCoreTitle": "BankCore",
-          "BankCoreSummary": "The BankCore backend system is designed to provide essential functionalities and support for a banking application. It is built using Python and the Django web framework, ensuring scalability, security, and reliability."
+          "backend": "Backend Development",
+          "frontend": "Frontend Development",
+          "cli": "Command Line Interface",
+          "fullStack": "Full Stack Development",
+          "vipTop10Title": "VipTop10 - Location Intelligence API",
+          "vipTop10Summary": "Advanced RESTful API providing comprehensive location intelligence with category filtering, geographic data management, and intelligent recommendation systems for places, cities, and countries.",
+          "mernFrontendTitle": "MERN Stack Frontend Application",
+          "mernBackendTitle": "MERN Stack Backend API",
+          "cliTitle": "Data Structures CLI - Stack & Queue Implementation",
+          "cliSummary": "Professional command-line interface implementing LIFO (Stack) and FIFO (Queue) data structures with comprehensive operations, error handling, and performance optimization.",
+          "webFrontendTitle": "Modern Web Frontend Application",
+          "jovianCareersTitle": "Jovian Careers - Job Platform",
+          "chatGptCloneTitle": "AI Chat Application - GPT Integration",
+          "chatGptCloneSummary": "Sophisticated chat application leveraging OpenAI's GPT-3.5 model for intelligent text completions with real-time conversation management and user experience optimization.",
+          "lowLevelType": "Low Level Programming",
+          "lowLevelTitle": "Systems Programming & Low-Level Development",
+          "higherLevelType": "High Level Programming",
+          "higherLevelTitle": "High-Level Application Development",
+          "higherLevelSummary": "Complex application development using high-level programming languages and frameworks, focusing on business logic, user interfaces, and system integration.",
+          "BankCoreTitle": "BankCore - Enterprise Banking System",
+          "BankCoreSummary": "Comprehensive banking backend system built with Python and Django, featuring robust security, transaction management, user authentication, and scalable architecture designed for enterprise-level financial applications."
         },
         "link": {
-          "visitProject": "Visit Project",
-          "visit": "Visit"
+          "visitProject": "View Project",
+          "visit": "Explore"
         }
     },
     "articles": {
-        "work": "Working on it..."
+        "work": "Technical articles and insights coming soon..."
     }
   }
   

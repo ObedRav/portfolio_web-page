@@ -10,64 +10,134 @@ import { LinkArrow } from '@/components/icons';
 import lightBulb from '../../public/svgs/lightBulb.svg';
 import TransitionEffect from '@/components/TransitionEffect';
 import { useTranslation } from 'react-i18next';
-import schemaMarkup from '@/components/schema';
+import DynamicMeta from '@/components/DynamicMeta';
+import schemaMarkup, { professionalProfileSchema, websiteSchema } from '@/components/schema';
 
 export default function Home () {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language || 'en';
+  const isSpanish = currentLanguage === 'es';
+
+  // Base schema for the homepage
+  const homepageSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      schemaMarkup,
+      professionalProfileSchema,
+      websiteSchema
+    ]
+  };
+
+  // Dynamic title and description based on language
+  const dynamicTitle = isSpanish 
+    ? 'Obed Rayo - Ingeniero de Software Experto | Desarrollador Full-Stack | Soluciones Web Modernas'
+    : 'Obed Rayo - Expert Software Engineer | Full-Stack Developer | Modern Web Solutions';
+    
+  const dynamicDescription = isSpanish
+    ? 'Obed Rayo es un ingeniero de software experto especializado en desarrollo web full-stack, sistemas backend y tecnologías modernas. Descubre proyectos innovadores, experiencia profesional y servicios de desarrollo. Contacta para consultoría e ingeniería de software.'
+    : 'Obed Rayo is an expert software engineer specializing in full-stack web development, backend systems, and modern technologies. Discover innovative projects, professional expertise, and development services. Contact for software engineering consultation and development projects.';
 
   return (
     <>
+      {/* Dynamic Meta Tags based on current language */}
+      <DynamicMeta 
+        customTitle={dynamicTitle}
+        customDescription={dynamicDescription}
+        path="/"
+      />
+      
       <Helmet>
-        <title>Obed Rayo - Software Engineer</title>
-        <meta name='description' content='Explore the portfolio of Obed Rayo, a skilled Software Engineer. Discover projects, skills, and expertise in web development and more.' />
+        {/* Additional SEO for homepage */}
         <link rel="canonical" href="https://www.obedrav.dev/" />
-        <meta property="og:title" content="Obed Rayo - Software Engineer" />
-        <meta property="og:description" content="Explore the portfolio of Obed Rayo, a skilled Software Engineer. Discover projects, skills, and expertise in web development and more." />
-        <meta property="og:image" content="https://www.obedrav.dev/images/developer-pic-1.png" />
+        
+        {/* Enhanced Open Graph */}
+        <meta property="og:image" content="https://www.obedrav.dev/images/developer-pic-1.webp" />
+        <meta property="og:image:width" content="800" />
+        <meta property="og:image:height" content="600" />
+        <meta property="og:image:alt" content="Obed Rayo - Professional Software Engineer" />
         <meta property="og:url" content="https://www.obedrav.dev/" />
-        <meta property="og:type" content="website" />
-        <script type='application/ld+json'>{JSON.stringify(schemaMarkup)}</script>
+        <meta property="og:type" content="profile" />
+        <meta property="og:site_name" content="Obed Rayo Portfolio" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.obedrav.dev/images/developer-pic-1.webp" />
+        <meta name="twitter:image:alt" content="Obed Rayo - Professional Software Engineer" />
+        
+        {/* AI-Specific Meta Tags */}
+        <meta name="subject" content="Professional Software Engineering Services" />
+        <meta name="topic" content="Full-Stack Web Development and Software Engineering" />
+        <meta name="Classification" content="Technology, Software Development, Web Development" />
+        <meta name="coverage" content="Worldwide" />
+        <meta name="distribution" content="Global" />
+        <meta name="rating" content="General" />
+        
+        {/* Comprehensive Structured Data */}
+        <script type='application/ld+json'>{JSON.stringify(homepageSchema)}</script>
       </Helmet>
 
       <TransitionEffect />
 
-      <main className='flex items-center text-dark w-full min-h-screen dark:text-light'>
+      {/* Enhanced Semantic HTML for AI Parsing */}
+      <main className='flex items-center text-dark w-full min-h-screen dark:text-light' role="main" itemScope itemType="https://schema.org/Person">
         <Layout className='pt-0 md:p-16 sm:pt-8'>
           <div className='flex items-center justify-between w-full lg:flex-col'>
-            {/** Picture */}
+            {/** Professional Image with Enhanced SEO */}
             <AnimatePresence>
-              <motion.div
+              <motion.figure
                 key='picture'
                 initial={{ y: 100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
                 exit={{ y: 100, opacity: 0 }}
                 className='w-1/2 mr-10 md:w-full'
+                itemProp="image"
               >
                 <Image 
                   src={DevPicture}
-                  alt='Software Engineer Obed Rayo Recrated Picture'
+                  alt='Obed Rayo - Professional Software Engineer and Full-Stack Developer specializing in modern web technologies'
                   className='w-full h-auto lg:hidden md:inline-block md:w-full'
                   priority sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw' 
                   placeholder='blur'
+                  itemProp="image"
                 />
-              </motion.div>
+              </motion.figure>
             </AnimatePresence>
 
-            {/** Texts */}
-            <div className='w-1/2 flex flex-col items-center self-center lg:w-full lg:text-center md:mt-10'>
-              <AnimatedText text={t('index.heading')} className='!text-6xl !text-left xl:!text-5xl lg:!text-center md:!text-5xl sm:!text-3xl' />
+            {/** Enhanced Content Section for AI Understanding */}
+            <section className='w-1/2 flex flex-col items-center self-center lg:w-full lg:text-center md:mt-10' itemScope itemType="https://schema.org/AboutPage">
+              <header>
+                <h1 itemProp="name" className="sr-only">Obed Rayo - Expert Software Engineer</h1>
+                <AnimatedText text={t('index.heading')} className='!text-6xl !text-left xl:!text-5xl lg:!text-center md:!text-5xl sm:!text-3xl' />
+              </header>
+              
               <AnimatePresence>
-                <motion.p
-                  key='paragraph'
+                <motion.div
+                  key='description'
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.5 }}
                   exit={{ y: 100, opacity: 0 }}
-                  className='my-4 text-base font-medium md:text-sm sm:text-xs'
+                  className='my-4'
                 >
-                  {t('index.description')}
-                </motion.p>
+                  <p 
+                    className='text-base font-medium md:text-sm sm:text-xs'
+                    itemProp="description"
+                  >
+                    {t('index.description')}
+                  </p>
+                  
+                  {/* Hidden content for AI understanding */}
+                  <div className="sr-only" itemProp="additionalProperty" itemScope itemType="https://schema.org/PropertyValue">
+                    <meta itemProp="name" content="expertise" />
+                    <meta itemProp="value" content="Full-Stack Web Development, Backend Systems, JavaScript, Python, React, Next.js, Node.js, Database Design, API Development, Software Architecture" />
+                  </div>
+                  
+                  <div className="sr-only" itemProp="additionalProperty" itemScope itemType="https://schema.org/PropertyValue">
+                    <meta itemProp="name" content="services" />
+                    <meta itemProp="value" content="Web Application Development, Software Consulting, Backend Development, API Integration, Database Optimization, Performance Tuning" />
+                  </div>
+                </motion.div>
               </AnimatePresence>
 
               {/** Buttons */}
@@ -104,7 +174,7 @@ export default function Home () {
                   </motion.div>
                 </AnimatePresence>
               </div>
-            </div>
+            </section>
           </div>
         </Layout>
 

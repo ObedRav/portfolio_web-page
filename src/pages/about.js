@@ -9,29 +9,68 @@ import profilePicture from '../../public/images/profile_picture.webp';
 import AnimatedNumbers from '@/components/AnimatedNumbers';
 import Skills from '@/components/Skills';
 import TransitionEffect from '@/components/TransitionEffect';
+import DynamicMeta from '@/components/DynamicMeta';
 import schemaMarkup from '@/components/schema';
 
 const about = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  
+  const currentLanguage = i18n.language || 'en';
+  const isSpanish = currentLanguage === 'es';
+
+  // Dynamic title and description based on language
+  const dynamicTitle = isSpanish 
+    ? 'Acerca de Obed Rayo - Ingeniero de Software Experto | Desarrollador Full-Stack | Líder Técnico'
+    : 'About Obed Rayo - Expert Software Engineer | Full-Stack Developer | Technical Leader';
+    
+  const dynamicDescription = isSpanish
+    ? 'Conoce a Obed Rayo, un ingeniero de software experimentado con experiencia en desarrollo web full-stack, sistemas backend, JavaScript, Python, React y tecnologías modernas. Descubre antecedentes profesionales, habilidades y enfoque para el desarrollo de software.'
+    : 'Learn about Obed Rayo, an experienced software engineer with expertise in full-stack web development, backend systems, JavaScript, Python, React, and modern technologies. Discover professional background, skills, and approach to software development.';
+
+  // Enhanced schema for About page
+  const aboutPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    '@id': 'https://www.obedrav.dev/about/#page',
+    url: 'https://www.obedrav.dev/about/',
+    name: dynamicTitle,
+    description: dynamicDescription,
+    inLanguage: currentLanguage,
+    mainEntity: {
+      '@type': 'Person',
+      '@id': 'https://www.obedrav.dev/#person'
+    }
+  };
 
   return (
     <>
+      {/* Dynamic Meta Tags */}
+      <DynamicMeta 
+        customTitle={dynamicTitle}
+        customDescription={dynamicDescription}
+        path="/about"
+      />
+      
       <Helmet>
-        <title>Obed Rayo - Software Engineer | about</title>
-        <meta name='description' content='Explore the portfolio of Obed Rayo, a skilled Software Engineer. Discover projects, skills, and expertise in web development and more.' />
-        <link rel="canonical" href="https://www.obedrav.dev/about" />
-        <meta property="og:title" content="Obed Rayo - Software Engineer | about" />
-        <meta property="og:description" content="Explore the portfolio of Obed Rayo, a skilled Software Engineer. Discover projects, skills, and expertise in web development and more." />
-        <meta property="og:image" content="https://www.obedrav.dev/images/developer-pic-1.png" />
-        <meta property="og:url" content="https://www.obedrav.dev/about" />
-        <meta property="og:type" content="website" />
-        <script type='application/ld+json'>{JSON.stringify(schemaMarkup)}</script>
+        {/* Additional About Page SEO */}
+        <link rel="canonical" href="https://www.obedrav.dev/about/" />
+        
+        {/* Enhanced Open Graph */}
+        <meta property="og:image" content="https://www.obedrav.dev/images/profile_picture.webp" />
+        <meta property="og:image:width" content="800" />
+        <meta property="og:image:height" content="800" />
+        <meta property="og:image:alt" content="Obed Rayo - Professional Software Engineer Profile" />
+        <meta property="og:url" content="https://www.obedrav.dev/about/" />
+        <meta property="og:type" content="profile" />
+        
+        {/* Structured Data */}
+        <script type='application/ld+json'>{JSON.stringify(aboutPageSchema)}</script>
       </Helmet>
 
       <TransitionEffect />
 
-      <main className='flex w-full flex-col items-center justify-center dark:text-light'>
+      <main className='flex w-full flex-col items-center justify-center dark:text-light' role="main">
         <Layout className='pt-16'>
           <AnimatedText text={t('about.header')} className='text-8xl mb-16 lg:text-7xl sm:text-6xl xs:text-4xl sm:mb-8' />
           <div className='grid w-full grid-cols-8 gap-16 sm:gap-8'>
