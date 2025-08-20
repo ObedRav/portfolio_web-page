@@ -13,7 +13,7 @@ const CustomLink = ({ href, title, className = '' }) => {
   const router = useRouter();
 
   return (
-    <Link href={href} className={`${className} relative group`}>
+    <Link href={href} className={`${className} relative group text-dark dark:text-light`}>
       {title}
 
       <span
@@ -92,7 +92,7 @@ const Navbar = () => {
                 href='https://github.com/ObedRav'
                 target='_blank'
                 whileHover={{y: -3}}
-                className='w-6 mr-3'
+                className='w-6 mr-3 text-dark dark:text-light'
                 whileTap={{scale: 0.8}}
                 aria-label="GitHub profile"
             >
@@ -103,7 +103,7 @@ const Navbar = () => {
                 href='https://www.linkedin.com/in/obedrav-developer'
                 target='_blank'
                 whileHover={{y: -3}}
-                className='w-6'
+                className='w-6 text-dark dark:text-light'
                 whileTap={{scale: 0.8}}
                 aria-label="LinkedIn profile"
             >
@@ -117,7 +117,7 @@ const Navbar = () => {
             whileTap={{ scale: 0.8 }}
             aria-label={`Switch to ${mode === 'light' ? 'dark' : 'light'} mode`}
           >
-            {mode === 'dark' ? <SunIcon className='fill-dark' /> : <MoonIcon className='w-4 h-4 fill-dark' />}
+            {mode === 'dark' ? <SunIcon className='fill-dark' /> : <MoonIcon className='w-4 h-4 fill-light' />}
           </motion.button>
           {languageInitialized && (
             <Settings
@@ -175,7 +175,7 @@ const Navbar = () => {
                   whileHover={{ y: -3 }}
                   whileTap={{ scale: 0.8 }}
                 >
-                  {mode === 'dark' ? <SunIcon className='fill-dark' /> : <MoonIcon className='w-4 h-4 fill-dark' />}
+                  {mode === 'dark' ? <SunIcon className='fill-dark' /> : <MoonIcon className='w-4 h-4 fill-light' />}
                 </motion.button>
 
                 {languageInitialized && (
