@@ -3,9 +3,6 @@
 const nextConfig = {
   reactStrictMode: true,
   trailingSlash: false,
-  generateBuildId: async () => {
-    return 'build'
-  },
   
   // Enhanced images configuration for AI crawlers
   images: {
@@ -82,9 +79,27 @@ const nextConfig = {
     scrollRestoration: true,
   },
   
-  // Enhanced compiler options
-  compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
+  // Webpack configuration for better Cloudflare Workers compatibility
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      // Improve chunk loading for client-side
+      config.optimization = {
+        ...config.optimization,
+        splitChunks: {
+          ...config.optimization.splitChunks,
+          cacheGroups: {
+            ...config.optimization.splitChunks.cacheGroups,
+            commons: {
+              name: 'commons',
+              chunks: 'all',
+              minChunks: 2,
+              priority: 0,
+            },
+          },
+        },
+      };
+    }
+    return config;
   },
   
   // Environment variables for AI optimization
